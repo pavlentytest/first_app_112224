@@ -13,6 +13,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private Button button;
 
+    public static final String KEY = "key";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,15 +62,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+
+
+        switch(v.getId()) {
+            case R.id.button: {
+
+            }
+        }
         if(v.getId() == R.id.button) {
             // явное намерние
-            //Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-            //startActivity(intent);
-            // неявное намерение
-            Intent intent = new Intent(Intent.ACTION_VIEW);
-            String www = "https://mirea.ru";
-            intent.setData(Uri.parse(www));
+            Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+            intent.putExtra(KEY,"Test!");
             startActivity(intent);
+            // неявное намерение
+           // Intent intent = new Intent(Intent.ACTION_VIEW);
+           // String www = "https://mirea.ru";
+          //  intent.setData(Uri.parse(www));
+           // startActivity(intent);
         } else {
 
         }
